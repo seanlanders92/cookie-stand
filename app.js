@@ -48,10 +48,10 @@ var seattleStore = {
     cookieSales: function cookieSales(){
        for(var i=0; i < hours.length; i++){
             avg = getRandomInt(this.min,this.max) * this.avgCookies;
-            this.cookiesales.push(avg)
-            return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
-        }
+            this.cookiesales.push(avg);
+            
     }
+    return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
+        }
 }
-
 console.log(seattleStore.cookieSales());
