@@ -54,4 +54,60 @@ var seattleStore = {
     return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
         }
 }
+var tokyoStore = {
+    min: 3,
+    max: 24,
+    avgCookies: 1.2,
+    cookiesales:[],
+    cookieSales: function cookieSales(){
+       for(var i=0; i < hours.length; i++){
+            avg = getRandomInt(this.min,this.max) * this.avgCookies;
+            this.cookiesales.push(avg);
+            
+    }
+    return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
+        }
+}
+var dubaiStore = {
+    min: 11,
+    max: 38,
+    avgCookies: 3.7,
+    cookiesales:[],
+    cookieSales: function cookieSales(){
+       for(var i=0; i < hours.length; i++){
+            avg = getRandomInt(this.min,this.max) * this.avgCookies;
+            this.cookiesales.push(avg);
+            
+    }
+    return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
+        }
+}
+var parisStore = {
+    min: 20,
+    max: 38,
+    avgCookies: 2.3,
+    cookiesales:[],
+    cookieSales: function cookieSales(){
+       for(var i=0; i < hours.length; i++){
+            avg = getRandomInt(this.min,this.max) * this.avgCookies;
+            this.cookiesales.push(avg);
+            
+    }
+    return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
+        }
+}
+var limaStore = {
+    min: 2,
+    max: 16,
+    avgCookies: 4.6,
+    cookiesales:[],
+    cookieSales: function cookieSales(){
+       for(var i=0; i < hours.length; i++){
+            avg = getRandomInt(this.min,this.max) * this.avgCookies;
+            this.cookiesales.push(avg);
+            
+    }
+    return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
+        }
+}
 console.log(seattleStore.cookieSales());
