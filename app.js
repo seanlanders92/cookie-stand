@@ -1,3 +1,4 @@
+'use strict';
 // ### Day 5 notes
 // > - Adding all the numbers in an array together.
 
@@ -30,22 +31,27 @@
 //     mood: 'happy',
 //     friends: ['sven', 'christof', 'elsa', 'anna']
 // }
+
+var hours = [6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+
 function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
+    min = Math.ceil(min - 1);
+    max = Math.floor(max + 1);
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-function storeHours(){
-var hours = [6,7,8,9,10,11,12,13,14,15,16,17,18,19];
-var avg =[]
-for(var i=0; i<hours.length; i++){
-    avg = getRandomInt(23,65) * 6.3;
-    return avg + ' cookies at ' + hours[i];
+var seattleStore = {
+    min: 23,
+    max: 65,
+    avgCookies: 6.3,
+    cookiesales:[],
+    cookieSales: function cookieSales(){
+       for(var i=0; i < hours.length; i++){
+            avg = getRandomInt(this.min,this.max) * this.avgCookies;
+            this.cookiesales.push(avg)
+            return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
+        }
+    }
 }
-}
-var seattle = {
 
-}
-
-console.log(storeHours());
+console.log(seattleStore.cookieSales());
