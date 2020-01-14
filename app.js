@@ -127,11 +127,24 @@ var limaStore = {
     avgCookies: 4.6,
     cookiesales:[],
     cookieSales: function cookieSales(){
+       var limaStoreArticle = document.getElementById('limaStore');
+       var limaStoreUL = document.createElement('ul');
+       limaStoreUL.textContent = limaStore.name;
+       limaStoreArticle.append(limaStoreUL);
+       var sum = 0;
        for(var i=0; i < hours.length; i++){
        var avg = Math.floor(getRandomInt(this.min,this.max) * this.avgCookies);
             this.cookiesales.push(avg);
-            
+
+            var newTag = document.createElement('li');
+            newTag.textContent = hours[i] + this.cookiesales[i];
+            limaStoreUL.append(newTag);
+
+            sum = sum + this.cookiesales[i];       
     }
+    var limaAvgLI = document.createElement('li');
+    limaAvgLI.textContent = `Total ${sum}` + '.';
+    limaStoreUL.appendChild(limaAvgLI);
     return `${hours}, ${this.cookiesales} cookies`;
         }
 }
@@ -150,3 +163,4 @@ seattleStoreUL.appendChild(avgLI);
 tokyoStore.cookieSales();
 dubaiStore.cookieSales();
 parisStore.cookieSales();
+limaStore.cookieSales();
