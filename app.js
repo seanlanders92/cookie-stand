@@ -35,65 +35,87 @@ var seattleStore = {
     }
 }
 var tokyoStore = {
+    name: 'Tokyo Store',
     min: 3,
     max: 24,
     avgCookies: 1.2,
     cookiesales:[],
+
     cookieSales: function cookieSales(){
+    var hours = ['6am: ','7am: ','8am: ','9am: ','10am ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ','7pm: '];
+    var tokyoStoreArticle = document.getElementById('tokyoStore');
+    var tokyoStoreUL = document.createElement('ul');
+    tokyoStoreUL.textContent = tokyoStore.name;
+    tokyoStoreArticle.append(tokyoStoreUL);
+    var sum = 0;
        for(var i=0; i < hours.length; i++){
-       var avg = Math.floor(getRandomInt(this.min,this.max) * this.avgCookies);
+            var avg = Math.floor(getRandomInt(this.min,this.max) * this.avgCookies);
             this.cookiesales.push(avg);
+
+            var newTag = document.createElement('li');
+            newTag.textContent = hours[i] + this.cookiesales[i];
+            tokyoStoreUL.append(newTag); 
             
-    }
-    return `${this.cookiesales} cookies at ${hours[i]}:00.`;
+            sum = sum + this.cookiesales[i];
         }
+        var tokyoAvgLI = document.createElement('li');
+        tokyoAvgLI.textContent = `Total ${sum}` + '.';
+        tokyoStoreUL.appendChild(tokyoAvgLI);
+
+        return `${hours}, ${this.cookiesales} cookies`;
+    }
 }
 var dubaiStore = {
+    name: 'Dubai Store',
     min: 11,
     max: 38,
     avgCookies: 3.7,
     cookiesales:[],
     cookieSales: function cookieSales(){
+    var hours = ['6am: ','7am: ','8am: ','9am: ','10am ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ','7pm: '];    
        for(var i=0; i < hours.length; i++){
         var avg = Math.floor(getRandomInt(this.min,this.max) * this.avgCookies);
             this.cookiesales.push(avg);
             
     }
-    return `${this.cookiesales} cookies at ${hours[i]}:00.`;
+    return `${hours}, ${this.cookiesales} cookies`;
         }
 }
 var parisStore = {
+    name: 'Paris Store',
     min: 20,
     max: 38,
     avgCookies: 2.3,
     cookiesales:[],
     cookieSales: function cookieSales(){
+    var hours = ['6am: ','7am: ','8am: ','9am: ','10am ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ','7pm: '];
        for(var i=0; i < hours.length; i++){
        var avg = Math.floor(getRandomInt(this.min,this.max) * this.avgCookies);
             this.cookiesales.push(avg);
             
     }
-    return `${this.cookiesales} cookies at ${hours[i]}:00.`;
+    return `${hours}, ${this.cookiesales} cookies`;
         }
 }
 var limaStore = {
+    name: 'Lima Store',
     min: 2,
     max: 16,
     avgCookies: 4.6,
     cookiesales:[],
     cookieSales: function cookieSales(){
+    var hours = ['6am: ','7am: ','8am: ','9am: ','10am ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ','7pm: '];    
        for(var i=0; i < hours.length; i++){
        var avg = Math.floor(getRandomInt(this.min,this.max) * this.avgCookies);
             this.cookiesales.push(avg);
             
     }
-    return `${this.cookiesales} cookies at ${hours[i]}:00.`;
+    return `${hours}, ${this.cookiesales} cookies`;
         }
 }
 
 
 var seattleStoreArticle = document.getElementById('seattleStore');
-
 var seattleStoreUL = document.createElement('ul');
 seattleStoreUL.textContent = seattleStore.name;
 seattleStoreArticle.append(seattleStoreUL);
@@ -101,5 +123,7 @@ seattleStoreArticle.append(seattleStoreUL);
 seattleStore.cookieSales();
 
 var avgLI = document.createElement('li');
-avgLI.textContent = `${seattleStore.calculateTotal()}` + '.';
+avgLI.textContent = `Total ${seattleStore.calculateTotal()}` + '.';
 seattleStoreUL.appendChild(avgLI);
+
+tokyoStore.cookieSales();
