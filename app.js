@@ -1,6 +1,6 @@
 'use strict';
 
-var hours = [6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+var hours = ['6am:','7am:','8am:','9am:','10am','11am:','12pm:','1pm','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'];
 
 function getRandomInt(min, max) {
     min = Math.ceil(min - 1);
@@ -9,18 +9,21 @@ function getRandomInt(min, max) {
   }
 
 var seattleStore = {
+    name: 'Seattle Store',
     min: 23,
     max: 65,
     avgCookies: 6.3,
     cookiesales:[],
     cookieSales: function cookieSales(){
+    var hours = ['6am:','7am:','8am:','9am:','10am','11am:','12pm:','1pm','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'];
        for(var i=0; i < hours.length; i++){
         var avg = Math.floor(getRandomInt(this.min,this.max) * this.avgCookies);
-
-            this.cookiesales.push(avg);
-            
-    }
-    return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
+        this.cookiesales.push(avg);
+        var newTag = document.createElement('li');
+        newTag.textContent = hours[i] + this.cookiesales[i];
+        seattleStoreUL.append(newTag);
+            }
+    return `${hours}, ${this.cookiesales} cookies`;
         }
 }
 var tokyoStore = {
@@ -34,7 +37,7 @@ var tokyoStore = {
             this.cookiesales.push(avg);
             
     }
-    return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
+    return `${this.cookiesales} cookies at ${hours[i]}:00.`;
         }
 }
 var dubaiStore = {
@@ -48,7 +51,7 @@ var dubaiStore = {
             this.cookiesales.push(avg);
             
     }
-    return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
+    return `${this.cookiesales} cookies at ${hours[i]}:00.`;
         }
 }
 var parisStore = {
@@ -62,7 +65,7 @@ var parisStore = {
             this.cookiesales.push(avg);
             
     }
-    return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
+    return `${this.cookiesales} cookies at ${hours[i]}:00.`;
         }
 }
 var limaStore = {
@@ -76,8 +79,18 @@ var limaStore = {
             this.cookiesales.push(avg);
             
     }
-    return this.cookiesales;
+    return `${this.cookiesales} cookies at ${hours[i]}:00.`;
         }
 }
-//var allStores=[seattleStore.cookieSales(), tokyoStore.cookieSales(), dubaiStore.cookieSales(), parisStore.cookieSales(), limaStore,cookieSales()];
-console.log(seattleStore.cookieSales());
+
+
+var seattleStoreArticle = document.getElementById('seattleStore');
+
+var seattleStoreUL = document.createElement('ul');
+seattleStoreUL.textContent = seattleStore.name;
+// var avgLI = document.createElement('li');
+// avgLI.textContent = seattleStore.cookieSales()+ '.';
+// seattleStoreUL.appendChild(avgLI);
+seattleStoreArticle.append(seattleStoreUL);
+
+seattleStore.cookieSales();
