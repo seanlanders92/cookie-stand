@@ -1,36 +1,4 @@
 'use strict';
-// ### Day 5 notes
-// > - Adding all the numbers in an array together.
-
-// > - var sum = 0;
-// > - var myArray = [4,8,15,16,23,42];
-// > - for(var i=0; i<myArray.length; i++);
-// > - sum = sum + myArray[i];
-
-// > - shorthand version
-// > - var altSum = 0
-// > - altSum += myArray[i];
-
-// > - var cats = ['josie', 'belle', 'frodo'];
-// > - var catAges = ['9', '8', '10'];
-// > - for(var i=0; i< cats.length; i++){
-// answer += `${cats[i]} is ${catsAges[i]}
-// years old ||`
-// }
-
-// ### JS Objects
-// > - Object Literals
-// > - Mimicks real life objects. 
-// >    - characteristics, behaviors, functionality.
-// > - { defines the start of an object.
-
-// > - var snowman =  {
-//     name: 'Olaf',
-//     age: '42',
-//     height: 63,
-//     mood: 'happy',
-//     friends: ['sven', 'christof', 'elsa', 'anna']
-// }
 
 var hours = [6,7,8,9,10,11,12,13,14,15,16,17,18,19];
 
@@ -47,7 +15,8 @@ var seattleStore = {
     cookiesales:[],
     cookieSales: function cookieSales(){
        for(var i=0; i < hours.length; i++){
-            avg = getRandomInt(this.min,this.max) * this.avgCookies;
+        var avg = Math.floor(getRandomInt(this.min,this.max) * this.avgCookies);
+
             this.cookiesales.push(avg);
             
     }
@@ -61,7 +30,7 @@ var tokyoStore = {
     cookiesales:[],
     cookieSales: function cookieSales(){
        for(var i=0; i < hours.length; i++){
-            avg = getRandomInt(this.min,this.max) * this.avgCookies;
+       var avg = Math.floor(getRandomInt(this.min,this.max) * this.avgCookies);
             this.cookiesales.push(avg);
             
     }
@@ -75,7 +44,7 @@ var dubaiStore = {
     cookiesales:[],
     cookieSales: function cookieSales(){
        for(var i=0; i < hours.length; i++){
-            avg = getRandomInt(this.min,this.max) * this.avgCookies;
+        var avg = Math.floor(getRandomInt(this.min,this.max) * this.avgCookies);
             this.cookiesales.push(avg);
             
     }
@@ -89,7 +58,7 @@ var parisStore = {
     cookiesales:[],
     cookieSales: function cookieSales(){
        for(var i=0; i < hours.length; i++){
-            avg = getRandomInt(this.min,this.max) * this.avgCookies;
+       var avg = Math.floor(getRandomInt(this.min,this.max) * this.avgCookies);
             this.cookiesales.push(avg);
             
     }
@@ -103,11 +72,12 @@ var limaStore = {
     cookiesales:[],
     cookieSales: function cookieSales(){
        for(var i=0; i < hours.length; i++){
-            avg = getRandomInt(this.min,this.max) * this.avgCookies;
+       var avg = Math.floor(getRandomInt(this.min,this.max) * this.avgCookies);
             this.cookiesales.push(avg);
             
     }
-    return this.cookiesales + ' cookies at ' + hours[i] + ':00.';
+    return this.cookiesales;
         }
 }
+//var allStores=[seattleStore.cookieSales(), tokyoStore.cookieSales(), dubaiStore.cookieSales(), parisStore.cookieSales(), limaStore,cookieSales()];
 console.log(seattleStore.cookieSales());
