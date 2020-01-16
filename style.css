@@ -1,0 +1,38 @@
+body{
+    background-color: antiquewhite;
+}
+header{
+    background-color: black;
+    color: blanchedalmond;
+    height: 125px;
+    
+}
+nav li{
+    display: inline-block;
+    text-align: center;
+    padding-left: 10%;
+    
+}
+article{
+    padding-top: 30px;
+    padding-left: 200px;
+    width: 960px;
+}
+article li{
+    display: inline-block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+h2{
+    float: right;
+    padding-right: 0px;
+}
+article p{
+    text-align: right;
+    padding-bottom: 100px;
+}
+footer{
+    background-color: black;
+    height: 125px;
+    width: 100%;
+}
