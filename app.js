@@ -95,18 +95,19 @@ var makeFooter = function () {
   }
 };
 
+var removeFooter = function () {
+  while (footRow.hasChildNodes()) {
+    footRow.removeChild(footRow.firstChild);
+  }
+};
+
 for (var k = 0; k < Store.cookieStores.length; k++) {
   Store.cookieStores[k].render();
 }
 
-createHeader();
-makeFooter();
-
 var cookieForm = document.getElementById('add-cookie');
 
-cookieForm.addEventListener('submit', handleSubmit);
-
-function handleSubmit(event){
+function handleSubmit(event) {
   event.preventDefault();
   var name = event.target.name.value;
   var min = parseInt(event.target.minCust.value);
@@ -115,7 +116,13 @@ function handleSubmit(event){
 
   var newStore = new Store(name, min, max, avg);
   newStore.render();
+  removeFooter();
+  makeFooter();
 }
+cookieForm.addEventListener('submit', handleSubmit);
+createHeader();
+makeFooter();
+cookieForm.reset();
 
 // var button = document.getElementById('button');
 // button.addEventListener('click', function(){
@@ -123,7 +130,7 @@ function handleSubmit(event){
 // }); 
 
 //Form Events HTML
-/* <form onsubmit="handlesubmit()"> 
+/* <form onsubmit="handlesubmit()">
   <input name="person" type='text'>
     <button type="submit">Submit</button>
 </form> */
