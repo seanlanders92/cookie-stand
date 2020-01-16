@@ -102,7 +102,37 @@ for (var k = 0; k < Store.cookieStores.length; k++) {
 createHeader();
 makeFooter();
 
-var button = document.getElementById('button');
-button.addEventListener('click', function(){
-  console.log('button clicked');
-});
+var cookieForm = document.getElementById('add-cookie');
+
+cookieForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event){
+  event.preventDefault();
+  var name = event.target.name.value;
+  var min = parseInt(event.target.minCust.value);
+  var max = parseInt(event.target.maxCust.value);
+  var avg = parseInt(event.target.avgCookie.value);
+
+  var newStore = new Store(name, min, max, avg);
+  newStore.render();
+}
+
+// var button = document.getElementById('button');
+// button.addEventListener('click', function(){
+//   console.log('button clicked');
+// }); 
+
+//Form Events HTML
+/* <form onsubmit="handlesubmit()"> 
+  <input name="person" type='text'>
+    <button type="submit">Submit</button>
+</form> */
+
+// JS part
+// var form = document.getElementById('person-form');
+// only use this if you dont have an onsubmit attribute
+// form.addEventListener('submit', handleSubmit);
+// event.target.person.value => user input data
+// function handleSubmit(){
+
+//};
