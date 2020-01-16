@@ -101,3 +101,8 @@ for (var k = 0; k < Store.cookieStores.length; k++) {
 
 createHeader();
 makeFooter();
+
+var button = document.getElementById('button');
+button.addEventListener('click', function(){
+  console.log('button clicked');
+});
