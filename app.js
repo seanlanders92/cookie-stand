@@ -95,12 +95,6 @@ var makeFooter = function () {
   }
 };
 
-var removeFooter = function () {
-  while (footRow.hasChildNodes()) {
-    footRow.removeChild(footRow.firstChild);
-  }
-};
-
 for (var k = 0; k < Store.cookieStores.length; k++) {
   Store.cookieStores[k].render();
 }
@@ -116,7 +110,7 @@ function handleSubmit(event) {
 
   var newStore = new Store(name, min, max, avg);
   newStore.render();
-  removeFooter();
+  foot.innerHTML = null;
   makeFooter();
 }
 cookieForm.addEventListener('submit', handleSubmit);
