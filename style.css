@@ -1,7 +1,14 @@
+
 header{
     background-color:#444;
     color: blanchedalmond;
     height: 100px; 
+}
+header h1{
+    font-family: serif;
+    font-size: 25px;
+    text-align: center;
+    color: darkgray;
 }
 nav{
     margin: 0px auto;
@@ -9,9 +16,12 @@ nav{
     
 }
 header img{
+    width: 20%;
+    height: auto;
     float: left;
     margin-right: 30px;
-    margin-top: 15px;
+    margin-top: 0px;
+    clear: both;
 }
 header ul li{
     display: inline-block;
@@ -30,23 +40,38 @@ main {
     margin: 30px auto;
     width: 960px;
 }
-main ul li{
-    float:left;
-    margin: 30px 30px 30px 0px;
-
+main div img{
+    margin-left: 120px;
+    width: 75%;
+    height: auto;
 }
-main ul li:last-child{
+.stockImage{
+    border-bottom: double;
+}
+.stockImage img{
+    float:left;
+    margin: 30px 180px 50px 0px;
+    height: auto; 
+    width: 200px;
+}
+.stockImage img:last-child{
     margin-right: 0px;
 }
-
 /*Featured Section */
+main > section{
+    border-top: double;
+}
 section img{
+    margin-top: 10px;
     float: left;
-
+    width: 200px; 
+    height: auto;
+    clear: both;
 }
 
 section div{
-    float: left;
+    margin-top: 10px;
+    float: right;
     margin-bottom: 30px;
     padding-left: 30px;
     width: calc(50% - 30px);
@@ -58,7 +83,18 @@ section div p{
     height: 320px;
     line-height: 24px;
     overflow: auto;
+    color: coral;
+    clear: both;
 }
+table {
+    width: 600px;}
+  th, td {
+  padding: 7px 10px 10px 10px;}
+  th {
+  text-transform: uppercase; letter-spacing: 0.1em; font-size: 90%;
+  border-bottom: 2px solid #111111; border-top: 1px solid #999; text-align: left;}
+  tr.even {
+  background-color: #efefef;}
 
 h2{
     font-size: 20px;
@@ -79,9 +115,21 @@ button{
 button:hover{
     background: cornsilk;
 }
+.locations{
+    text-align: center;
+    margin-left: 110px;
+    display: inline-block;
+    margin-top: 20px;
+}
 footer{
     background-color: #444;
     clear: both;
     height: 100px;
     width: 100%;
+}
+footer p{
+    text-align: center;
+}
+.clearfix {
+    clear: both;
 }
