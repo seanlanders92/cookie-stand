@@ -1,21 +1,27 @@
+
 header{
     background-color:#444;
     color: blanchedalmond;
     height: 100px; 
+}
+header h1{
+    font-family: serif;
+    font-size: 25px;
+    text-align: center;
+    color: darkgray;
 }
 nav{
     margin: 0px auto;
     width: 960px;
     
 }
-nav img{
+header img{
     width: 20%;
     height: auto;
-}
-header img{
     float: left;
     margin-right: 30px;
-    margin-top: 15px;
+    margin-top: 0px;
+    clear: both;
 }
 header ul li{
     display: inline-block;
@@ -34,36 +40,38 @@ main {
     margin: 30px auto;
     width: 960px;
 }
-main img{
+main div img{
+    margin-left: 120px;
     width: 75%;
     height: auto;
 }
-main ul li{
-    float:left;
-    margin: 30px 30px 30px 0px;
-
+.stockImage{
+    border-bottom: double;
 }
-main ul li:last-child{
+.stockImage img{
+    float:left;
+    margin: 30px 180px 50px 0px;
+    height: auto; 
+    width: 200px;
+}
+.stockImage img:last-child{
     margin-right: 0px;
 }
-main ul li img{
-    height: auto; 
-    width: auto; 
-    max-width: 300px; 
-    max-height: 300px;
-}
-
 /*Featured Section */
+main > section{
+    border-top: double;
+}
 section img{
+    margin-top: 10px;
     float: left;
-    height: auto; 
-    width: auto; 
-    max-width: 300px; 
-    max-height: 300px;
+    width: 200px; 
+    height: auto;
+    clear: both;
 }
 
 section div{
-    float: left;
+    margin-top: 10px;
+    float: right;
     margin-bottom: 30px;
     padding-left: 30px;
     width: calc(50% - 30px);
@@ -75,6 +83,8 @@ section div p{
     height: 320px;
     line-height: 24px;
     overflow: auto;
+    color: coral;
+    clear: both;
 }
 table {
     width: 600px;}
@@ -105,9 +115,21 @@ button{
 button:hover{
     background: cornsilk;
 }
+.locations{
+    text-align: center;
+    margin-left: 110px;
+    display: inline-block;
+    margin-top: 20px;
+}
 footer{
     background-color: #444;
     clear: both;
     height: 100px;
     width: 100%;
+}
+footer p{
+    text-align: center;
+}
+.clearfix {
+    clear: both;
 }

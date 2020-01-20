@@ -12,28 +12,30 @@
 
 <body>
   <header>
-    <h1>Welcome!</h1>
+    <h1>Cookie Sales Stats</h1>
   </header>
-
-  <table>
-    <thead id='table-head'></thead>
-    <tbody id='table-body'></tbody>
-    <tfoot id='table-foot'></tfoot>
-  </table>
-  <form id="add-cookie">
-    <fieldset>
-      <legend>New Store Information</legend>
-      <label>Store Name</label>
-      <input name="name" type="text">
-      <label>Minimum Customers</label>
-      <input name="minCust" type="text">
-      <label>Maximum Customers</label>
-      <input name="maxCust" type="text">
-      <label>Avg Cookies per Customers</label>
-      <input name="avgCookie" type="text">
-    </fieldset>
-    <button type="submit">Create New Store</button>
-  </form>
+  <main>
+    <table>
+      <thead id='table-head'></thead>
+      <tbody id='table-body'></tbody>
+      <tfoot id='table-foot'></tfoot>
+    </table>
+    <form id="add-cookie">
+      <fieldset>
+        <legend>New Store Information</legend>
+        <label>Store Name</label>
+        <input name="name" type="text">
+        <label>Min Customers</label>
+        <input name="minCust" type="text">
+        <label>Max Customers</label>
+        <input name="maxCust" type="text">
+        <br></br>
+        <label>Avg Cookies per Customer</label>
+        <input name="avgCookie" type="text">
+      </fieldset>
+      <button type="submit">Create New Store</button>
+    </form>
+  </main>
   <script src="app.js"></script>
 </body>
 
